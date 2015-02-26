@@ -74,7 +74,7 @@ module Admin
 
     protected
     def collection
-      ocs = OrderCycle.managed_by(spree_current_user)
+      ocs = OrderCycle.accessible_by(spree_current_user)
 
       ocs.undated +
         ocs.soonest_closing +
